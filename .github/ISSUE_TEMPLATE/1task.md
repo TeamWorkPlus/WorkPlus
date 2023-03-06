@@ -10,9 +10,9 @@ assignees: ""
 
 ## 작업구분
 
-[] FE
-[] BE
-[] DevOps
+- [ ] FE
+- [ ] BE
+- [ ] DevOps
 
 ## 작업내용
 
