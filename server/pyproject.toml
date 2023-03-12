@@ -1,0 +1,83 @@
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "Plus Project with Docker Multi-Stage builds"
+authors = ["Joey Kim <hyoj0942@gmail.com>"]
+
+
+[tool.poetry.dependencies]
+# Python version
+python = "^3.8"
+
+# FastAPI
+fastapi = "^0.92.0"
+gunicorn = "^20.0.4"
+uvicorn = "^0.11.3"
+thrift = "^0.13.0"
+python-dotenv = "^0.21.1"
+jwt = "^1.3.1"
+bcrypt = "^4.0.1"
+sqlalchemy = "^2.0.4"
+pydantic = {extras = ["email"], version = "^1.10.5"}
+fastapi-users = "^10.4.0"
+bson = "^0.5.10"
+beanie = "^1.17.0"
+httpx-oauth = "^0.11.0"
+fastapi-users-db-beanie = "^1.1.4"
+
+
+
+[tool.poetry.dev-dependencies]
+coverage = { version = "5.0.3", extras = ["toml"]}
+black = "^19.10b0"
+isort = { version = "^4.3.21", extras = ["pyproject"]}
+requests = "^2.23.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.1.3"
+
+[tool.black]
+# https://github.com/psf/black
+line-length = 88
+target_version = ['py38']
+exclude = '''
+(
+  /(
+    \.git
+    | \.mypy_cache
+    | \.pytest_cache
+    | htmlcov
+    | venv
+    | .venv
+  )/
+)
+'''
+
+[tool.isort]
+# https://github.com/timothycrosley/isort
+# https://github.com/timothycrosley/isort/wiki/isort-Settings
+line_length = 88
+indent = '    '
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+
+
+[tool.coverage]
+# https://github.com/nedbat/coveragepy
+    [tool.coverage.run]
+
+    source = ["app"]
+    branch = true
+    omit = ['']
+
+    [tool.coverage.report]
+    exclude_lines = [
+        "# noqa",
+        "raise NotImplementedError"
+    ]
