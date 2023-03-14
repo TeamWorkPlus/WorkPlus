@@ -24,7 +24,7 @@ bcrypt = "^4.0.1"
 sqlalchemy = "^2.0.4"
 pydantic = {extras = ["email"], version = "^1.10.5"}
 fastapi-users = "^10.4.0"
-bson = "^0.5.10"
+pymongo = "^4.3.3"
 beanie = "^1.17.0"
 httpx-oauth = "^0.11.0"
 fastapi-users-db-beanie = "^1.1.4"
