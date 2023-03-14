@@ -11,7 +11,7 @@ authors = ["Joey Kim <hyoj0942@gmail.com>"]
 
 [tool.poetry.dependencies]
 # Python version
-python = "^3.8"
+python = "^3.9"
 
 # FastAPI
 fastapi = "^0.92.0"
