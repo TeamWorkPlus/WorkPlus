@@ -22,7 +22,7 @@ class Settings(BaseSettings):
 
     SECRET_KEY: Final = os.getenv('SECRET_KEY')
     ALGORITHM: Final = os.getenv('ALGORITHM')
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    ACCESS_TOKEN_EXPIRE_MINUTES: Final = os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES')
 
     DB_DATABASE: Final = os.getenv('DB_DATABASE')
     DB_URL: Final = os.getenv('DB_URL')
@@ -30,21 +30,21 @@ class Settings(BaseSettings):
     ORIGINS: Final = os.getenv('ORIGINS')
     ALLOWED_HOSTS: Final = os.getenv('ALLOWED_HOSTS')
 
-    GOOGLE_CLIENT_ID: str = os.getenv('GOOGLE_CLIENT_ID')
-    GOOGLE_CLIENT_SECRET: str = os.getenv('GOOGLE_CLIENT_SECRET')
-    GOOGLE_CALLBACK_URL: str = os.getenv('GOOGLE_CALLBACK_URL')
+    GOOGLE_CLIENT_ID: Final = os.getenv('GOOGLE_CLIENT_ID')
+    GOOGLE_CLIENT_SECRET: Final = os.getenv('GOOGLE_CLIENT_SECRET')
+    GOOGLE_CALLBACK_URL: Final = os.getenv('GOOGLE_CALLBACK_URL')
 
     # GITHUB_CLIENT_ID: str = None
     # GITHUB_CLIENT_SECRET: str = None
     # GITHUB_CALLBACK_URL: str = None
 
-    KAKAO_CLIENT_ID: str = None
-    KAKAO_CLIENT_SECRET: str = None
-    KAKAO_CALLBACK_URL: str = None
+    KAKAO_CLIENT_ID: Final = None
+    KAKAO_CLIENT_SECRET: Final = None
+    KAKAO_CALLBACK_URL: Final = None
 
-    NAVER_CLIENT_ID: str = None
-    NAVER_CLIENT_SECRET: str = None
-    NAVER_CALLBACK_URL: str = None
+    NAVER_CLIENT_ID: Final = None
+    NAVER_CLIENT_SECRET: Final = None
+    NAVER_CALLBACK_URL: Final = None
 
     class Config:
         env_file = get_env_file()
